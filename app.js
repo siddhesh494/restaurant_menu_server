@@ -8,6 +8,7 @@ const MongoHelper = require('./dal/mongo/mongo-helper')
 const mongoHelper = new MongoHelper()
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const authMiddleware = require("./middleware/auth")
 
 var app = express();
 
@@ -32,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
     }, 1000)
   }
 })()
-
+app.use(authMiddleware)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

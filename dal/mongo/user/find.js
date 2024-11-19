@@ -7,7 +7,7 @@ const mongoHelper = new MongoHelper()
 
 
 async function getAllUser () {
-  const collection = await mongoHelper.initConnection();
+  const collection = await mongoHelper.getInstance();
   const findResult = await collection.collection("users").find({}, { projection: { password: 0 } }).toArray();
   return findResult
 }

@@ -2,6 +2,13 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 
 
 class MongoHelper {
+  mongoInstance=null
+  getInstance = async () => {
+    if(!this.mongoInstance) {
+      this.mongoInstance = this.initConnection()
+    }
+    return this.mongoInstance
+  }
   initConnection = async () => {
     const uri = process.env.mongoURL;
     const database = process.env.database
@@ -18,6 +25,7 @@ class MongoHelper {
       await client.connect();
       // Send a ping to confirm a successful connection
       const connection = client.db(database);
+      this.mongoInstance = connection
       console.log("Pinged your deployment. You successfully connected to MongoDB!");
       return connection
     } finally {
