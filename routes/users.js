@@ -11,7 +11,7 @@ const userRequestValidator = new UserRequestValidator()
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.get('/get', userRequestValidator.get, userController.getUser);
+router.post('/get', userRequestValidator.get, userController.getUser);
 
 
 module.exports = router;

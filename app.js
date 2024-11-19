@@ -9,6 +9,7 @@ const mongoHelper = new MongoHelper()
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const authMiddleware = require("./middleware/auth")
+const cors = require("cors");
 
 var app = express();
 
@@ -16,6 +17,10 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+
+app.options("*", cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
+
+app.use(cors({ origin: "http://localhost:3000", optionsSuccessStatus: 200 }));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
