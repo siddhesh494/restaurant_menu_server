@@ -15,8 +15,26 @@ class UserController {
         return res.status(500).json(response(err))
       }
       return res.status(200).json(response({
+        messageCode: MESSAGE_CODE.SUCCESS
+      }))
+    } catch (error) {
+      console.log(error)
+      return res.status(500).json(response({
+        messageCode: MESSAGE_CODE.INTERNAL_ERROR
+      }))
+    }
+  }
+
+  recentlyViewed = async (req, res) => {
+    try {
+      const { userID } = req.params
+      const [err, result] = await safePromise(userServices.recentlyViewed(userID))
+      if(err) {
+        return res.status(500).json(response(err))
+      }
+      return res.status(200).json(response({
         messageCode: MESSAGE_CODE.SUCCESS,
-        data: result.data
+        data: result
       }))
     } catch (error) {
       console.log(error)

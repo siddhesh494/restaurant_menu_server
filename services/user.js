@@ -1,12 +1,12 @@
 const MESSAGE_CODE = require("../config/message-code")
-const ProductDAO = require("../dao/productDAO")
+const UserDAO = require("../dao/userDAO")
 const { safePromise } = require("../utils/required-helper")
 
-const productDAO = new ProductDAO()
+const userDAO = new UserDAO()
 class UserServices {
   updateRecentlyViewProduct = async (data, userDetails) => {
     const [saveErr, saveRes] = await safePromise(
-      productDAO.addRecentlyViewProduct(
+      userDAO.addRecentlyViewProduct(
         userDetails.user_id, 
         data.productID,
         {
@@ -21,9 +21,18 @@ class UserServices {
         messageCode: MESSAGE_CODE.INTERNAL_ERROR
       })
     }
-    return Promise.resolve({
-      data: []
-    })
+    return Promise.resolve({})
+  }
+
+  recentlyViewed = async (userID) => {
+    const [saveErr, saveRes] = await safePromise(userDAO.getUserRecentlyViewProduct(userID))
+
+    if(saveErr) {
+      return Promise.reject({
+        messageCode: MESSAGE_CODE.INTERNAL_ERROR
+      })
+    }
+    return saveRes
   }
 }
 

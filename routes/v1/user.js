@@ -12,5 +12,11 @@ router.post(
   userController.updateRecentlyViewProduct
 );
 
+router.get(
+  '/:userID/recentlyViewed', 
+  userController.recentlyViewed
+);
+
+
 
 module.exports = router;
