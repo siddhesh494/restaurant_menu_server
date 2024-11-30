@@ -1,9 +1,10 @@
-var express = require('express');
-var router = express.Router();
+const routeV1 = require("./v1")
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+async function bindRoutes(app) {
+  routeV1.forEach(item => {
+    app.use(`/api/v1/${item.route}`, item.dir)
+  });
+  return Promise.resolve()
+}
 
-module.exports = router;
+module.exports = bindRoutes
