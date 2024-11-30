@@ -1,18 +1,22 @@
 var express = require('express');
+const UserController = require('../../controller/user');
+const UserRequestValidator = require('../../middleware/validation/user');
 var router = express.Router();
 
-// const userController = new UserController()
-// const userRequestValidator = new UserRequestValidator()
+const userController = new UserController()
+const userRequestValidator = new UserRequestValidator()
 
+router.post(
+  '/updateRecentlyViewProduct', 
+  userRequestValidator.updateRecentlyViewProduct, 
+  userController.updateRecentlyViewProduct
+);
 
-/* GET users listing. */
-router.get('/g', function(req, res, next) {
-  return res.status(200).json({
-    success: true,
-    data: {}
-  })
-});
-// router.post('/get', userRequestValidator.get, userController.getUser);
+router.get(
+  '/:userID/recentlyViewed', 
+  userController.recentlyViewed
+);
+
 
 
 module.exports = router;

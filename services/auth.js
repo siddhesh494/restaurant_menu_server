@@ -1,7 +1,11 @@
 const { admin, authClient} = require("./../config/firebase-admin-setup")
 const { signInWithEmailAndPassword } = require('firebase/auth');
 
-const { safePromise } = require("./../utils/required-helper")
+const { safePromise } = require("./../utils/required-helper");
+const UserDAO = require("../dao/userDAO");
+const MESSAGE_CODE = require("../config/message-code");
+const userDAO = new UserDAO()
+
 
 class AuthService {
   signUpNewUser = async (data) => {
@@ -12,6 +16,19 @@ class AuthService {
       disabled: false
     }))
     if(userError) {
+      return Promise.reject({
+        messageCode: MESSAGE_CODE.INTERNAL_ERROR
+      })
+    }
+
+    const [docErr, docRes] = await safePromise(userDAO.createUserDocument(
+      userResponse.uid, 
+      {
+        userID: userResponse.uid,
+        email: userResponse.email
+      }
+    ))
+    if(docErr) {
       return Promise.reject({
         messageCode: MESSAGE_CODE.INTERNAL_ERROR
       })

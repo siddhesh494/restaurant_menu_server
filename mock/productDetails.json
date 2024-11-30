@@ -1,153 +1,153 @@
 [
   {
-    "id": 1,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU0",
     "productName": "Sony Camera Alpha 7",
     "description": "High-resolution mirrorless camera with 4K video.",
     "image": "https://example.com/images/sony-camera-alpha7.jpg",
     "price": 1299.99
   },
   {
-    "id": 2,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU3",
     "productName": "Samsung Galaxy S22",
     "description": "Flagship smartphone with advanced camera features.",
     "image": "https://example.com/images/samsung-galaxy-s22.jpg",
     "price": 999.99
   },
   {
-    "id": 3,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU4",
     "productName": "Bose Noise Cancelling Headphones 700",
     "description": "Premium headphones with exceptional noise cancellation.",
     "image": "https://example.com/images/bose-nc-700.jpg",
     "price": 379.99
   },
   {
-    "id": 4,
-    "productName": "Apple MacBook Pro 14\"",
-    "description": "Powerful laptop with M1 Pro chip for creatives.",
-    "image": "https://example.com/images/macbook-pro-14.jpg",
-    "price": 1999.99
-  },
-  {
-    "id": 5,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU5",
     "productName": "LG OLED C1 Smart TV",
     "description": "4K OLED TV with vibrant colors and Dolby Vision.",
     "image": "https://example.com/images/lg-oled-c1.jpg",
     "price": 1499.99
   },
   {
-    "id": 6,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU6",
+    "productName": "LG OLED C1 Smart TV",
+    "description": "4K OLED TV with vibrant colors and Dolby Vision.",
+    "image": "https://example.com/images/lg-oled-c1.jpg",
+    "price": 1499.99
+  },
+  {
+    "id": "ni58kXDmlZYbey16gaFihG95LnU7",
     "productName": "Sony PlayStation 5",
     "description": "Next-gen gaming console with immersive gameplay.",
     "image": "https://example.com/images/sony-ps5.jpg",
     "price": 499.99
   },
   {
-    "id": 7,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU8",
     "productName": "Canon EOS R6",
     "description": "Mirrorless camera with advanced autofocus capabilities.",
     "image": "https://example.com/images/canon-eos-r6.jpg",
     "price": 2499.99
   },
   {
-    "id": 8,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU9",
     "productName": "Dyson Air Purifier TP07",
     "description": "Smart air purifier with HEPA filtration.",
     "image": "https://example.com/images/dyson-air-purifier-tp07.jpg",
     "price": 599.99
   },
   {
-    "id": 9,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU10",
     "productName": "Razer Blade 15",
     "description": "Gaming laptop with NVIDIA RTX graphics and RGB keyboard.",
     "image": "https://example.com/images/razer-blade-15.jpg",
     "price": 2199.99
   },
   {
-    "id": 10,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU11",
     "productName": "Fitbit Charge 5",
     "description": "Advanced fitness tracker with health monitoring features.",
     "image": "https://example.com/images/fitbit-charge-5.jpg",
     "price": 179.99
   },
   {
-    "id": 11,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU12",
     "productName": "Google Pixel 7 Pro",
     "description": "Smartphone with powerful AI and a stunning display.",
     "image": "https://example.com/images/google-pixel-7-pro.jpg",
     "price": 899.99
   },
   {
-    "id": 12,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU13",
     "productName": "Dell XPS 13",
     "description": "Ultrabook with a stunning infinity-edge display.",
     "image": "https://example.com/images/dell-xps-13.jpg",
     "price": 1399.99
   },
   {
-    "id": 13,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU14",
     "productName": "Nikon Z6 II",
     "description": "Compact mirrorless camera with dual processors.",
     "image": "https://example.com/images/nikon-z6-ii.jpg",
     "price": 1999.99
   },
   {
-    "id": 14,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU15",
     "productName": "JBL Flip 6",
     "description": "Portable Bluetooth speaker with waterproof design.",
     "image": "https://example.com/images/jbl-flip-6.jpg",
     "price": 129.99
   },
   {
-    "id": 15,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU16",
     "productName": "Logitech MX Master 3",
     "description": "Ergonomic wireless mouse with customizable buttons.",
     "image": "https://example.com/images/logitech-mx-master-3.jpg",
     "price": 99.99
   },
   {
-    "id": 16,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU17",
     "productName": "Samsung Galaxy Watch 5",
     "description": "Advanced smartwatch with health tracking features.",
     "image": "https://example.com/images/samsung-galaxy-watch-5.jpg",
     "price": 349.99
   },
   {
-    "id": 17,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU18",
     "productName": "Anker PowerCore 26800",
     "description": "High-capacity power bank for charging multiple devices.",
     "image": "https://example.com/images/anker-powercore-26800.jpg",
     "price": 69.99
   },
   {
-    "id": 18,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU19",
     "productName": "Microsoft Surface Pro 9",
     "description": "Versatile 2-in-1 laptop and tablet hybrid.",
     "image": "https://example.com/images/microsoft-surface-pro-9.jpg",
     "price": 1599.99
   },
   {
-    "id": 19,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU20",
     "productName": "Sony WH-1000XM5",
     "description": "Industry-leading noise-cancelling wireless headphones.",
     "image": "https://example.com/images/sony-wh-1000xm5.jpg",
     "price": 399.99
   },
   {
-    "id": 20,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU21",
     "productName": "Amazon Echo Dot (5th Gen)",
     "description": "Smart speaker with Alexa and improved sound.",
     "image": "https://example.com/images/amazon-echo-dot-5th-gen.jpg",
     "price": 49.99
   },
   {
-    "id": 21,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU22",
     "productName": "GoPro HERO11 Black",
     "description": "Action camera with stunning 5.3K video recording.",
     "image": "https://example.com/images/gopro-hero11-black.jpg",
     "price": 499.99
   },
   {
-    "id": 22,
+    "id": "ni58kXDmlZYbey16gaFihG95LnU23",
     "productName": "Dyson Supersonic Hair Dryer",
     "description": "Fast drying with advanced heat control technology.",
     "image": "https://example.com/images/dyson-supersonic-hair-dryer.jpg",
