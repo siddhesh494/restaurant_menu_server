@@ -1,8 +1,13 @@
 var express = require('express');
+const Auth = require('../../controller/auth');
+const AuthRequestValidator = require('../../middleware/validation/auth');
 var router = express.Router();
 
+const auth = new Auth()
+const authRequestValidator = new AuthRequestValidator()
 
 /* GET users listing. */
-router.get('/login', () => {});
+router.post('/signUp', authRequestValidator.signUp, auth.signUp);
+router.post('/login', authRequestValidator.signUp, auth.login);
 
 module.exports = router;
