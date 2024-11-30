@@ -2,11 +2,12 @@ const { OPEN_API } = require("../config/constant");
 const { admin } = require("../config/firebase-admin-setup");
 const MESSAGE_CODE = require("../config/message-code");
 const { response } = require("../utils/response-helper");
-
+const createLogger = require("../utils/create-logger")
+const log = createLogger("user-validation")
 
 
 async function auth(req, res, next) {
-  console.log("in middleware")
+  const functionName = "auth"
   try {
     if(OPEN_API.indexOf(req.path) > -1) {
       // for open route
@@ -15,6 +16,7 @@ async function auth(req, res, next) {
       const authorizationHeader = req.headers.authorization;
 
       if (!authorizationHeader || !authorizationHeader.startsWith('Bearer ')) {
+        log.error(functionName, "No authorization")
         return res.status(401).json(response({
           messageCode: MESSAGE_CODE.UNAUTHORIZED_ERROR
         }))
@@ -31,6 +33,7 @@ async function auth(req, res, next) {
     }
     
   } catch (error) {
+    log.error(functionName, "authorization: catch error", error)
     return res.status(401).json(response({
       messageCode: MESSAGE_CODE.UNAUTHORIZED_ERROR
     }));
