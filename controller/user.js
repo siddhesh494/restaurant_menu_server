@@ -1,30 +1,28 @@
 
 const UserServices = require("./../services/user")
 const { safePromise } = require('../utils/required-helper')
+const { response } = require("../utils/response-helper")
+const MESSAGE_CODE = require("../config/message-code")
 
 const userServices = new UserServices()
 
 class UserController {
 
-  getUser = async (req, res) => {
+  updateRecentlyViewProduct = async (req, res) => {
     try {
-      const [err, result] = await safePromise(userServices.getUser(req.body))
+      const [err, result] = await safePromise(userServices.updateRecentlyViewProduct(req.body, req.user))
       if(err) {
-        return res.status(500).json({
-          success: false,
-          msg: err.msg || err
-        })
+        return res.status(500).json(response(err))
       }
-      return res.status(200).json({
-        success: true,
+      return res.status(200).json(response({
+        messageCode: MESSAGE_CODE.SUCCESS,
         data: result.data
-      })
+      }))
     } catch (error) {
       console.log(error)
-      return res.status(500).json({
-        success: false,
-        msg: "Catch error"
-      })
+      return res.status(500).json(response({
+        messageCode: MESSAGE_CODE.INTERNAL_ERROR
+      }))
     }
   }
 }

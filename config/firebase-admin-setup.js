@@ -1,7 +1,8 @@
 const admin = require('firebase-admin');
-const serviceAccount = require("./../serviceAccountKey.json"); // Download this from Firebase Console under Project Settings -> Service Accounts
+const serviceAccount = require("./../serviceAccountKey.json");
 const { initializeApp } = require('firebase/app');
-const { getAuth, signInWithEmailAndPassword } = require('firebase/auth');
+const { getAuth } = require('firebase/auth');
+const { getFirestore } = require('firebase/firestore');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -15,10 +16,12 @@ const app = initializeApp({
   messagingSenderId: serviceAccount.messagingSenderId,
   appId: serviceAccount.appId,
 });
-const authClient = getAuth(app);
 
+const authClient = getAuth(app);
+const db = getFirestore(app)
 
 module.exports = {
   admin,
-  authClient
+  authClient,
+  db
 };

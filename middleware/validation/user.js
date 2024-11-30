@@ -1,29 +1,30 @@
 const joi = require("joi")
 const { safePromise } = require("../../utils/required-helper")
-
+const { response } = require("./../../utils/response-helper")
+const MESSAGE_CODE = require("../../config/message-code")
 
 
 class UserRequestValidator {
-  get = async (req, res, next) => {
+
+  updateRecentlyViewProduct = async (req, res, next) => {
     const schema = joi.object({
-      name: joi.string().required()
+      productID: joi.string().required()
     })
 
     try {
       const [error, result] = await safePromise(schema.validateAsync(req.body))
       if(error) {
-        return res.status(422).json({
-          success: false,
-          msg: "invalid request body",
-          data: error.message
-        })
+        return res.status(422).json(response({
+          messageCode: MESSAGE_CODE.VALIDATION_ERROR,
+          message: error.message
+        }))
       }
       next()
     } catch (error) {
-      return res.status(422).json({
-        success: false,
-        msg: "invalid request body"
-      })
+      return res.status(422).json(response({
+        messageCode: MESSAGE_CODE.VALIDATION_ERROR,
+        message: error.message
+      }))
     }
   }
 }

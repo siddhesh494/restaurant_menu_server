@@ -10,7 +10,7 @@ class Auth {
 
       const [error, result] = await safePromise(authService.signUpNewUser(req.body))
       if(error) {
-        return Promise.reject(response(error))
+        return res.status(500).json(response(error))
       }
       res.status(200).json(response({
         messageCode: MESSAGE_CODE.SUCCESS,
