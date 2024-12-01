@@ -1,7 +1,11 @@
 const { addDoc, getDoc, doc, setDoc, collection, getDocs, query, orderBy, limit } = require("firebase/firestore");
 const { db } = require("../config/firebase-admin-setup");
-const createLogger = require("../utils/create-logger")
+const createLogger = require("../utils/create-logger");
+const { groupBy, map } = require("lodash");
+const ProductDAO = require("./productDAO");
 const log = createLogger("user-dao")
+
+const productDAO = new ProductDAO()
 
 class UserDAO {
   createUserDocument = async (userID, data) => {
@@ -47,8 +51,17 @@ class UserDAO {
           ...doc.data(),
         });
       });
+      const groupByProductID =  groupBy(reviews, "productID")
+      const productIDList = Object.keys(groupByProductID)
+      const productListRes = await productDAO.getProductDetailsByID(productIDList)
 
-      return reviews;
+
+      return map(productListRes, (item) => {
+        return {
+          ...item,
+          timeStamp: groupByProductID?.[item.id]?.[0]?.timestamp || ""
+        }
+      });
     } catch (error) {
       log.error(functionName, "Error while getUserRecentlyViewProduct", error)
       throw error

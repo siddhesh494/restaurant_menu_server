@@ -3,154 +3,84 @@
     "id": "ni58kXDmlZYbey16gaFihG95LnU0",
     "productName": "Sony Camera Alpha 7",
     "description": "High-resolution mirrorless camera with 4K video.",
-    "image": "https://example.com/images/sony-camera-alpha7.jpg",
+    "image": "https://m.media-amazon.com/images/I/61WNxdAeAoL._AC_SX425_.jpg",
     "price": 1299.99
   },
   {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU3",
+    "id": "ni58kXDmlZYbey16gaFihG95LnU1",
     "productName": "Samsung Galaxy S22",
     "description": "Flagship smartphone with advanced camera features.",
-    "image": "https://example.com/images/samsung-galaxy-s22.jpg",
+    "image": "https://m.media-amazon.com/images/I/71qZERyxy6L.jpg",
     "price": 999.99
   },
   {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU4",
+    "id": "ni58kXDmlZYbey16gaFihG95LnU2",
     "productName": "Bose Noise Cancelling Headphones 700",
     "description": "Premium headphones with exceptional noise cancellation.",
-    "image": "https://example.com/images/bose-nc-700.jpg",
+    "image": "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/25919074/2023/11/21/4839a6f8-b15e-46a8-aa2e-9fc7a2d291cc1700547594890-Bose-Noise-Cancelling-700-Bluetooth-Wireless-Over-Ear-Headph-1.jpg",
     "price": 379.99
   },
   {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU5",
+    "id": "ni58kXDmlZYbey16gaFihG95LnU3",
     "productName": "LG OLED C1 Smart TV",
     "description": "4K OLED TV with vibrant colors and Dolby Vision.",
-    "image": "https://example.com/images/lg-oled-c1.jpg",
+    "image": "https://i.rtings.com/assets/products/1UbkxYvb/lg-c1-oled/design-medium.jpg?format=auto",
     "price": 1499.99
   },
   {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU6",
-    "productName": "LG OLED C1 Smart TV",
-    "description": "4K OLED TV with vibrant colors and Dolby Vision.",
-    "image": "https://example.com/images/lg-oled-c1.jpg",
-    "price": 1499.99
-  },
-  {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU7",
+    "id": "ni58kXDmlZYbey16gaFihG95LnU4",
     "productName": "Sony PlayStation 5",
     "description": "Next-gen gaming console with immersive gameplay.",
-    "image": "https://example.com/images/sony-ps5.jpg",
+    "image": "https://m.media-amazon.com/images/I/51ljnEaW0pL.jpg",
     "price": 499.99
   },
   {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU8",
+    "id": "ni58kXDmlZYbey16gaFihG95LnU5",
     "productName": "Canon EOS R6",
     "description": "Mirrorless camera with advanced autofocus capabilities.",
-    "image": "https://example.com/images/canon-eos-r6.jpg",
+    "image": "https://www.justcanon.in/cdn/shop/products/EOSR10FrontBody_500X700.jpg?v=1718111460",
     "price": 2499.99
   },
   {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU9",
+    "id": "ni58kXDmlZYbey16gaFihG95LnU6",
     "productName": "Dyson Air Purifier TP07",
     "description": "Smart air purifier with HEPA filtration.",
-    "image": "https://example.com/images/dyson-air-purifier-tp07.jpg",
+    "image": "https://dyson-h.assetsadobe2.com/is/image/content/dam/dyson/leap-petite-global/products/ec/438e/variants/non-sco/TP07_variant-spec-WHSIL.jpg?$responsive$&fmt=png-alpha&cropPathE=desktop&fit=stretch,1&wid=960",
     "price": 599.99
   },
   {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU10",
+    "id": "ni58kXDmlZYbey16gaFihG95LnU7",
     "productName": "Razer Blade 15",
     "description": "Gaming laptop with NVIDIA RTX graphics and RGB keyboard.",
-    "image": "https://example.com/images/razer-blade-15.jpg",
+    "image": "https://m.media-amazon.com/images/I/617xAAmW2eL.jpg",
     "price": 2199.99
   },
   {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU11",
+    "id": "ni58kXDmlZYbey16gaFihG95LnU8",
     "productName": "Fitbit Charge 5",
     "description": "Advanced fitness tracker with health monitoring features.",
-    "image": "https://example.com/images/fitbit-charge-5.jpg",
+    "image": "https://cdni.autocarindia.com/Stuff/Uploads/ReviewImages/638626846066957572_fitbit_charge_5.jpg",
     "price": 179.99
   },
   {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU12",
+    "id": "ni58kXDmlZYbey16gaFihG95LnU9",
     "productName": "Google Pixel 7 Pro",
     "description": "Smartphone with powerful AI and a stunning display.",
-    "image": "https://example.com/images/google-pixel-7-pro.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbWdPzTS71HNppVD32V0CKXzOlN7JT2g6ZbA&s",
     "price": 899.99
   },
   {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU13",
+    "id": "ni58kXDmlZYbey16gaFihG95LnU10",
     "productName": "Dell XPS 13",
     "description": "Ultrabook with a stunning infinity-edge display.",
-    "image": "https://example.com/images/dell-xps-13.jpg",
+    "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/13-9340/media-gallery/silver/touch-oled/notebook-xps-13-9340-t-oled-sl-gallery-3.psd?fmt=pjpg&pscan=auto&scl=1&wid=3509&hei=2082&qlt=100,1&resMode=sharp2&size=3509,2082&chrss=full&imwidth=5000",
     "price": 1399.99
   },
   {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU14",
-    "productName": "Nikon Z6 II",
-    "description": "Compact mirrorless camera with dual processors.",
-    "image": "https://example.com/images/nikon-z6-ii.jpg",
-    "price": 1999.99
-  },
-  {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU15",
-    "productName": "JBL Flip 6",
-    "description": "Portable Bluetooth speaker with waterproof design.",
-    "image": "https://example.com/images/jbl-flip-6.jpg",
-    "price": 129.99
-  },
-  {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU16",
-    "productName": "Logitech MX Master 3",
-    "description": "Ergonomic wireless mouse with customizable buttons.",
-    "image": "https://example.com/images/logitech-mx-master-3.jpg",
-    "price": 99.99
-  },
-  {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU17",
-    "productName": "Samsung Galaxy Watch 5",
-    "description": "Advanced smartwatch with health tracking features.",
-    "image": "https://example.com/images/samsung-galaxy-watch-5.jpg",
-    "price": 349.99
-  },
-  {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU18",
-    "productName": "Anker PowerCore 26800",
-    "description": "High-capacity power bank for charging multiple devices.",
-    "image": "https://example.com/images/anker-powercore-26800.jpg",
-    "price": 69.99
-  },
-  {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU19",
-    "productName": "Microsoft Surface Pro 9",
-    "description": "Versatile 2-in-1 laptop and tablet hybrid.",
-    "image": "https://example.com/images/microsoft-surface-pro-9.jpg",
-    "price": 1599.99
-  },
-  {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU20",
+    "id": "ni58kXDmlZYbey16gaFihG95LnU11",
     "productName": "Sony WH-1000XM5",
     "description": "Industry-leading noise-cancelling wireless headphones.",
-    "image": "https://example.com/images/sony-wh-1000xm5.jpg",
+    "image": "https://www.sony.co.in/image/6145c1d32e6ac8e63a46c912dc33c5bb?fmt=pjpeg&wid=220&bgcolor=FFFFFF&bgc=FFFFFF",
     "price": 399.99
-  },
-  {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU21",
-    "productName": "Amazon Echo Dot (5th Gen)",
-    "description": "Smart speaker with Alexa and improved sound.",
-    "image": "https://example.com/images/amazon-echo-dot-5th-gen.jpg",
-    "price": 49.99
-  },
-  {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU22",
-    "productName": "GoPro HERO11 Black",
-    "description": "Action camera with stunning 5.3K video recording.",
-    "image": "https://example.com/images/gopro-hero11-black.jpg",
-    "price": 499.99
-  },
-  {
-    "id": "ni58kXDmlZYbey16gaFihG95LnU23",
-    "productName": "Dyson Supersonic Hair Dryer",
-    "description": "Fast drying with advanced heat control technology.",
-    "image": "https://example.com/images/dyson-supersonic-hair-dryer.jpg",
-    "price": 429.99
   }
 ]
