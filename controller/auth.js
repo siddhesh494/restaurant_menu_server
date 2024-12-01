@@ -4,7 +4,7 @@ const { safePromise } = require("../utils/required-helper")
 const { response } = require("../utils/response-helper")
 const createLogger = require("../utils/create-logger")
 const log = createLogger("auth-controller")
-
+const { isEmpty } = require("lodash")
 const authService = new AuthService()
 class Auth {
   signUp = async (req, res) => {
@@ -49,6 +49,28 @@ class Auth {
       }))
     }
 
+  }
+
+  verifyToken = async (req, res) => {
+    const functionName = "verifyToken"
+    try {
+      if(req.user && !isEmpty(req.user)) {
+        return res.status(200).json(response({
+          messageCode: MESSAGE_CODE.SUCCESS,
+          data: req.user
+        }))
+      } else {
+        return res.status(401).json(response({
+          messageCode: MESSAGE_CODE.UNAUTHORIZED_ERROR
+        }))
+      }
+      
+    } catch (error) {
+      log.error(functionName, "Error in verifyToken: Catch Error", error)
+      return res.status(500).json(response({
+        messageCode: MESSAGE_CODE.INTERNAL_ERROR
+      }))
+    }
   }
 }
 
