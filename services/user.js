@@ -2,6 +2,7 @@ const MESSAGE_CODE = require("../config/message-code")
 const UserDAO = require("../dao/userDAO")
 const { safePromise } = require("../utils/required-helper")
 const createLogger = require("../utils/create-logger")
+const { serverTimestamp } = require("firebase/firestore")
 const log = createLogger("user-service")
 const userDAO = new UserDAO()
 
@@ -15,7 +16,7 @@ class UserServices {
         data.productID,
         {
           productID: data.productID,
-          timestamp: new Date()
+          timestamp: serverTimestamp()
         }
       )
     )
@@ -34,6 +35,7 @@ class UserServices {
 
     const [getErr, result] = await safePromise(userDAO.getUserRecentlyViewProduct(userID))
 
+    
     if(getErr) {
       log.error(functionName, "Error in recentlyViewed", getErr)
       return Promise.reject({
