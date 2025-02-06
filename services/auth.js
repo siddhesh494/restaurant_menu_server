@@ -11,6 +11,8 @@ const log = createLogger("auth-Service")
 class AuthService {
   signUpNewUser = async (data) => {
     const functionName = "signUpNewUser"
+
+    // create user in auth table
     const [userError, userResponse] = await safePromise(admin.auth().createUser({
       email: data.email,
       password: data.password,
@@ -24,6 +26,7 @@ class AuthService {
       })
     }
 
+    // add created user details in firebase database
     const [docErr, docRes] = await safePromise(userDAO.createUserDocument(
       userResponse.uid, 
       {
