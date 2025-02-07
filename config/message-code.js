@@ -44,10 +44,10 @@ const MESSAGE_CODE = {
     status: 401,
     message: "Unauthorized Access"
   },
-  "INVALID_OTP": {
+  "INVALID_EMAIL_OR_PASSWORD": {
     statusCode: "EXP-4002",
     status: 401,
-    message: "Invalid OTP"
+    message: "Invalid email or password"
   },
   "OTP_EXPIRY": {
     statusCode: "EXP-4003",

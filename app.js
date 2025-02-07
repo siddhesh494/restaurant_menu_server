@@ -5,8 +5,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require("cors");
-const swaggerJSDoc = require('swagger-jsdoc');
-const swaggerUi = require('swagger-ui-express');
 const Route = require('./boot/route')
 const Middleware = require('./boot/middleware')
 
@@ -25,29 +23,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-const swaggerDefinition = {
-  openapi: '3.0.0',  // You can also use 'swagger: "2.0"' for older versions
-  info: {
-    title: 'My API',   // Title of the API
-    version: '1.0.0',  // Version of the API
-    description: 'A simple Express API', // Description of the API
-  },
-  servers: [
-    {
-      url: 'http://localhost:4000/api/v1', // URL of the API
-    },
-  ]
-};
-
-// Options for the swagger-jsdoc
-const options = {
-  swaggerDefinition,
-  apis: ['./routes/v1/*.js'], // Path to the API routes
-};
-const swaggerSpec = swaggerJSDoc(options);
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
 
 (async () => {
   try {
