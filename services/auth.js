@@ -5,7 +5,9 @@ const { safePromise } = require("./../utils/required-helper");
 const UserDAO = require("../dao/userDAO");
 const MESSAGE_CODE = require("../config/message-code");
 const userDAO = new UserDAO()
-const createLogger = require("../utils/create-logger")
+const createLogger = require("../utils/create-logger");
+const RestaurantDAO = require("../dao/restaurantDAO");
+const restaurantDAO = new RestaurantDAO()
 const log = createLogger("auth-Service")
 
 class AuthService {
@@ -22,16 +24,18 @@ class AuthService {
     if(userError) {
       log.error(functionName, "Error while creating user", userError)
       return Promise.reject({
-        messageCode: MESSAGE_CODE.INTERNAL_ERROR
+        messageCode: MESSAGE_CODE.INTERNAL_ERROR,
+        message: userError.message
       })
     }
 
     // add created user details in firebase database
-    const [docErr, docRes] = await safePromise(userDAO.createUserDocument(
+    const [docErr, docRes] = await safePromise(restaurantDAO.createRestaurantDocument(
       userResponse.uid, 
       {
         userID: userResponse.uid,
-        email: userResponse.email
+        email: userResponse.email,
+        name: data.name
       }
     ))
     if(docErr) {
@@ -47,6 +51,13 @@ class AuthService {
     const functionName = "loginUser"
     const [userError, userResult] = await safePromise(signInWithEmailAndPassword(authClient, data.email, data.password))
     if(userError) {
+      if(userError.code === 'auth/invalid-credential') {
+        log.error(functionName, "Invalid username or password", userError)
+        return Promise.reject({
+          messageCode: MESSAGE_CODE.INVALID_EMAIL_OR_PASSWORD
+        })
+      }
+
       log.error(functionName, "Error while login user", userError)
       return Promise.reject({
         messageCode: MESSAGE_CODE.INTERNAL_ERROR

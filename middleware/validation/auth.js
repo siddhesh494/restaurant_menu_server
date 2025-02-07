@@ -9,6 +9,7 @@ class AuthRequestValidator {
   signUp = async (req, res, next) => {
     const functionName = "signUp"
     const schema = joi.object({
+      name: joi.string().required(),
       email: joi.string().required(),
       password: joi.string().required(),
     })

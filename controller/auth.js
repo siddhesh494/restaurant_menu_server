@@ -34,7 +34,7 @@ class Auth {
       const [error, result] = await safePromise(authService.loginUser(req.body))
       if(error) {
         log.error(functionName, "Error in login", error)
-        return Promise.reject(response(error))
+        return res.status(500).json(response(error))
       }
 
       return res.status(200).json(response({
