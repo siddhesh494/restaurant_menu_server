@@ -33,7 +33,7 @@ class AuthService {
     const [docErr, docRes] = await safePromise(restaurantDAO.createRestaurantDocument(
       userResponse.uid, 
       {
-        userID: userResponse.uid,
+        restaurantID: userResponse.uid,
         email: userResponse.email,
         name: data.name
       }

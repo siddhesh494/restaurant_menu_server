@@ -55,9 +55,13 @@ class Auth {
     const functionName = "verifyToken"
     try {
       if(req.user && !isEmpty(req.user)) {
+        const { user_id, email } = req.user
         return res.status(200).json(response({
           messageCode: MESSAGE_CODE.SUCCESS,
-          data: req.user
+          data: {
+            restaurantID: user_id,
+            email: email
+          }
         }))
       } else {
         return res.status(401).json(response({
