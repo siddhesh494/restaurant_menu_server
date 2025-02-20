@@ -67,7 +67,7 @@ class AuthService {
     
     return {
       email: userCredential.email,
-      user_id: userCredential.uid,
+      restaurantID: userCredential.uid,
       accessToken: userCredential.stsTokenManager.accessToken,
       refreshToken: userCredential.stsTokenManager.refreshToken
     }
