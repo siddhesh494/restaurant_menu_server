@@ -43,12 +43,12 @@ class MenuService {
     return {}
   }
 
-  get = async (user) => {
+  get = async (data) => {
     const functionName = "get"
 
     // verify if restaurant is valid or not
     const [getErr, getRes] = await safePromise(restaurantDAO.getRestaurantDocument(
-      user.user_id
+      data.restaurantID
     ))
     if(getErr) {
       log.error(functionName, "Error while getting restaurant details", getErr)

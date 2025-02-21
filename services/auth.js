@@ -69,7 +69,7 @@ class AuthService {
       email: userCredential.email,
       restaurantID: userCredential.uid,
       accessToken: userCredential.stsTokenManager.accessToken,
-      refreshToken: userCredential.stsTokenManager.refreshToken
+      // refreshToken: userCredential.stsTokenManager.refreshToken
     }
   }
 }

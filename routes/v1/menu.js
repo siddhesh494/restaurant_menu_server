@@ -8,6 +8,6 @@ const menuRequestValidator = new MenuRequestValidator()
 const menuController = new MenuController()
 
 router.post('/update', menuRequestValidator.update, menuController.update);
-router.post('/get', menuController.get);
+router.post('/get',menuRequestValidator.get, menuController.get);
 
 module.exports = router;

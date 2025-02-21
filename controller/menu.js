@@ -30,7 +30,7 @@ class MenuController {
   get = async (req, res) => {
     const functionName = "getController"
     try {
-      const [error, result] = await safePromise(menuService.get(req.user))
+      const [error, result] = await safePromise(menuService.get(req.body))
       if(error) {
         log.error(functionName, "Error in get menu", error)
         return res.status(500).json(response(error))

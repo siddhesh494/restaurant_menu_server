@@ -34,9 +34,17 @@ async function auth(req, res, next) {
     
   } catch (error) {
     log.error(functionName, "authorization: catch error", error)
-    return res.status(401).json(response({
-      messageCode: MESSAGE_CODE.UNAUTHORIZED_ERROR
-    }));
+    if (error.code === "auth/id-token-expired") {
+      return res.status(401).json(response({
+        messageCode: MESSAGE_CODE.UNAUTHORIZED_ERROR,
+        message: "Token expired. Please refresh and retry."
+      }));
+    } else {
+      return res.status(401).json(response({
+        messageCode: MESSAGE_CODE.UNAUTHORIZED_ERROR,
+        message: "Invalid token"
+      }));
+    }
   }
 }
 
