@@ -76,6 +76,28 @@ class Auth {
       }))
     }
   }
+
+  forgotPassword = async (req, res) => {
+    const functionName = "forgotPassword"
+    try {
+      const [error, result] = await safePromise(authService.forgotPassword(req.body))
+      if(error) {
+        log.error(functionName, "Error in forgotPassword", error)
+        return res.status(500).json(response(error))
+      }
+
+      return res.status(200).json(response({
+        messageCode: MESSAGE_CODE.SUCCESS,
+        message: "Link send to your EmailID"
+      }))
+
+    } catch (error) {
+      log.error(functionName, "Error in forgotPassword: Catch Error", error)
+      return res.status(500).json(response({
+        messageCode: MESSAGE_CODE.INTERNAL_ERROR
+      }))
+    }
+  }
 }
 
 module.exports = Auth

@@ -1,5 +1,5 @@
 const { admin, authClient} = require("./../config/firebase-admin-setup")
-const { signInWithEmailAndPassword } = require('firebase/auth');
+const { signInWithEmailAndPassword, sendPasswordResetEmail } = require('firebase/auth');
 
 const { safePromise } = require("./../utils/required-helper");
 const UserDAO = require("../dao/userDAO");
@@ -71,6 +71,22 @@ class AuthService {
       accessToken: userCredential.stsTokenManager.accessToken,
       // refreshToken: userCredential.stsTokenManager.refreshToken
     }
+  }
+
+  forgotPassword = async (data) => {
+    const functionName = "forgotPassword"
+
+    const [userError, userResult] = await safePromise(sendPasswordResetEmail(authClient, data.email))
+    if(userError) {
+      log.error(functionName, "Error while sending reset password", userError)
+      return Promise.reject({
+        messageCode: MESSAGE_CODE.INTERNAL_ERROR,
+        message: "Cannot send reset password link, Please try again!" 
+      })
+    }
+
+    return {}
+
   }
 }
 
