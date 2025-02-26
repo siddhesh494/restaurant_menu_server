@@ -1,5 +1,5 @@
 const { admin, authClient} = require("./../config/firebase-admin-setup")
-const { signInWithEmailAndPassword, sendPasswordResetEmail } = require('firebase/auth');
+const { signInWithEmailAndPassword, sendPasswordResetEmail, sendEmailVerification } = require('firebase/auth');
 
 const { safePromise } = require("./../utils/required-helper");
 const MESSAGE_CODE = require("../config/message-code");
@@ -67,6 +67,7 @@ class AuthService {
       email: userCredential.email,
       restaurantID: userCredential.uid,
       accessToken: userCredential.stsTokenManager.accessToken,
+      isEmailVerified: userCredential.emailVerified
       // refreshToken: userCredential.stsTokenManager.refreshToken
     }
   }
@@ -77,6 +78,26 @@ class AuthService {
     const [userError, userResult] = await safePromise(sendPasswordResetEmail(authClient, data.email))
     if(userError) {
       log.error(functionName, "Error while sending reset password", userError)
+      return Promise.reject({
+        messageCode: MESSAGE_CODE.INTERNAL_ERROR,
+        message: "Cannot send reset password link, Please try again!" 
+      })
+    }
+
+    return {}
+
+  }
+  emailVerification = async () => {
+    const functionName = "emailVerification"
+    if(!authClient.currentUser) {
+      return Promise.reject({
+        messageCode: MESSAGE_CODE.UNAUTHORIZED_ERROR,
+        message: "Cannot verify, Please try again later!"
+      })
+    }
+    const [userError, ] = await safePromise(sendEmailVerification(authClient.currentUser))
+    if(userError) {
+      log.error(functionName, "Error while sending email verification link", userError)
       return Promise.reject({
         messageCode: MESSAGE_CODE.INTERNAL_ERROR,
         message: "Cannot send reset password link, Please try again!" 

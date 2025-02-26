@@ -12,6 +12,7 @@ router.post('/signUp', authRequestValidator.signUp, auth.signUp);
 router.post('/login', authRequestValidator.login, auth.login);
 
 router.post('/forgotPassword', authRequestValidator.forgotPassword, auth.forgotPassword)
+router.post('/verifyEmail', auth.emailVerification)
 
 router.get(
   '/verifyJWTToken', 

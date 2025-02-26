@@ -6,6 +6,7 @@ const createLogger = require("../utils/create-logger")
 const log = createLogger("auth-controller")
 const { isEmpty } = require("lodash")
 const RestaurantService = require("../services/restaurant")
+const { admin } = require("../config/firebase-admin-setup")
 
 const authService = new AuthService()
 const restaurantService = new RestaurantService()
@@ -60,11 +61,13 @@ class Auth {
     try {
       if(req.user && !isEmpty(req.user)) {
         const { user_id, email } = req.user
+        const userAuthDetail = await admin.auth().getUser(user_id)
         return res.status(200).json(response({
           messageCode: MESSAGE_CODE.SUCCESS,
           data: {
             restaurantID: user_id,
-            email: email
+            email: email,
+            isEmailVerified: userAuthDetail.emailVerified
           }
         }))
       } else {
@@ -97,6 +100,28 @@ class Auth {
 
     } catch (error) {
       log.error(functionName, "Error in forgotPassword: Catch Error", error)
+      return res.status(500).json(response({
+        messageCode: MESSAGE_CODE.INTERNAL_ERROR
+      }))
+    }
+  }
+  
+  emailVerification = async (req, res) => {
+    const functionName = "emailVerification"
+    try {
+      const [error, result] = await safePromise(authService.emailVerification(req.body))
+      if(error) {
+        log.error(functionName, "Error in emailVerification", error)
+        return res.status(500).json(response(error))
+      }
+
+      return res.status(200).json(response({
+        messageCode: MESSAGE_CODE.SUCCESS,
+        message: "Verification link send to your EmailID"
+      }))
+
+    } catch (error) {
+      log.error(functionName, "Error in emailVerification: Catch Error", error)
       return res.status(500).json(response({
         messageCode: MESSAGE_CODE.INTERNAL_ERROR
       }))
