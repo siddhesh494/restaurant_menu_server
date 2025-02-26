@@ -1,5 +1,6 @@
 const authRouter = require("./auth")
 const menuRouter = require("./menu")
+const restaurantRouter = require("./restaurant")
 
 module.exports = [
   {
@@ -9,5 +10,9 @@ module.exports = [
   {
     route: 'menu',
     dir: menuRouter
+  },
+  {
+    route: 'restaurant',
+    dir: restaurantRouter
   }
 ]

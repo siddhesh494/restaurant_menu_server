@@ -5,7 +5,11 @@ const { response } = require("../utils/response-helper")
 const createLogger = require("../utils/create-logger")
 const log = createLogger("auth-controller")
 const { isEmpty } = require("lodash")
+const RestaurantService = require("../services/restaurant")
+
 const authService = new AuthService()
+const restaurantService = new RestaurantService()
+
 class Auth {
   signUp = async (req, res) => {
     const functionName = "signUpController"

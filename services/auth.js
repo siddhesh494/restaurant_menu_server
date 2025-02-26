@@ -2,9 +2,7 @@ const { admin, authClient} = require("./../config/firebase-admin-setup")
 const { signInWithEmailAndPassword, sendPasswordResetEmail } = require('firebase/auth');
 
 const { safePromise } = require("./../utils/required-helper");
-const UserDAO = require("../dao/userDAO");
 const MESSAGE_CODE = require("../config/message-code");
-const userDAO = new UserDAO()
 const createLogger = require("../utils/create-logger");
 const RestaurantDAO = require("../dao/restaurantDAO");
 const restaurantDAO = new RestaurantDAO()
