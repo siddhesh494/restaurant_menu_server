@@ -5,7 +5,9 @@ const { safePromise } = require("./../utils/required-helper");
 const MESSAGE_CODE = require("../config/message-code");
 const createLogger = require("../utils/create-logger");
 const RestaurantDAO = require("../dao/restaurantDAO");
+const ContactUsDAO = require("../dao/contactUs");
 const restaurantDAO = new RestaurantDAO()
+const contactUsDAO = new ContactUsDAO()
 const log = createLogger("auth-Service")
 
 class AuthService {
@@ -101,6 +103,26 @@ class AuthService {
       return Promise.reject({
         messageCode: MESSAGE_CODE.INTERNAL_ERROR,
         message: "Cannot send reset password link, Please try again!" 
+      })
+    }
+
+    return {}
+
+  }
+
+  contactUs = async (data) => {
+    const functionName = "contactUs"
+    const [docErr, docRes] = await safePromise(contactUsDAO.createContactUsDocument(
+      crypto.randomUUID(), 
+      {
+        ...data,
+        isViewed: false
+      }
+    ))
+    if(docErr) {
+      log.error(functionName, "Error while creating contact us document", docErr)
+      return Promise.reject({
+        messageCode: MESSAGE_CODE.INTERNAL_ERROR
       })
     }
 

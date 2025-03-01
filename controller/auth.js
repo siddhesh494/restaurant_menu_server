@@ -5,11 +5,9 @@ const { response } = require("../utils/response-helper")
 const createLogger = require("../utils/create-logger")
 const log = createLogger("auth-controller")
 const { isEmpty } = require("lodash")
-const RestaurantService = require("../services/restaurant")
 const { admin } = require("../config/firebase-admin-setup")
 
 const authService = new AuthService()
-const restaurantService = new RestaurantService()
 
 class Auth {
   signUp = async (req, res) => {
@@ -122,6 +120,27 @@ class Auth {
 
     } catch (error) {
       log.error(functionName, "Error in emailVerification: Catch Error", error)
+      return res.status(500).json(response({
+        messageCode: MESSAGE_CODE.INTERNAL_ERROR
+      }))
+    }
+  }
+  contactUs = async (req, res) => {
+    const functionName = "contactUs"
+    try {
+      const [error, ] = await safePromise(authService.contactUs(req.body))
+      if(error) {
+        log.error(functionName, "Error in contactUs", error)
+        return res.status(500).json(response(error))
+      }
+
+      return res.status(200).json(response({
+        messageCode: MESSAGE_CODE.SUCCESS,
+        message: "Email Sent"
+      }))
+
+    } catch (error) {
+      log.error(functionName, "Error in contactUs: Catch Error", error)
       return res.status(500).json(response({
         messageCode: MESSAGE_CODE.INTERNAL_ERROR
       }))
