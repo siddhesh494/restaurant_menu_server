@@ -3,6 +3,7 @@ const { safePromise } = require("./../utils/required-helper");
 const createLogger = require("../utils/create-logger");
 const RestaurantDAO = require("../dao/restaurantDAO");
 const MESSAGE_CODE = require("../config/message-code");
+const { map } = require("lodash");
 const log = createLogger("menu-Service")
 const restaurantDAO = new RestaurantDAO()
 
@@ -64,8 +65,12 @@ class MenuService {
         message: "No restaurant found"
       })
     }
-
-    return getRes.menuDetails || []
+    return map(getRes.menuDetails, (item) => {
+      return {
+        restaurantName: getRes.name,
+        ...item
+      }
+    })
   }
 }
 
