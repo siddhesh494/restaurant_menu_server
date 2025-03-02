@@ -15,9 +15,9 @@ var app = express();
 // app.set('view engine', 'ejs');
 
 
-app.options("*", cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
+app.options("*", cors({ origin: 'https://restaurant-menu-server.onrender.com', optionsSuccessStatus: 200 }));
 
-app.use(cors({ origin: "http://localhost:3000", optionsSuccessStatus: 200 }));
+app.use(cors({ origin: "https://restaurant-menu-server.onrender.com", optionsSuccessStatus: 200 }));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
