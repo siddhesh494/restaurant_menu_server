@@ -31,12 +31,6 @@ app.get("/", (req, res) => {
     timestamp: new Date().toISOString(),
   });
 });
-app.get("/server.js", (req, res) => {
-  res.status(200).json({
-    status: "healthy",
-    timestamp: new Date().toISOString(),
-  });
-});
 
 (async () => {
   try {
