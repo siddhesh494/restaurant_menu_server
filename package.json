@@ -2,8 +2,9 @@
   "name": "backend",
   "version": "0.0.0",
   "private": true,
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon server.js"
   },
   "dependencies": {
     "bunyan": "^1.8.15",
