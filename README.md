@@ -13,7 +13,7 @@ The server works seamlessly with the [Restaurant Menu Client](https://github.com
 ---
 
 ## ✨ Features
-- **Authentication**: Firebase Authentication (email/password or other supported providers)
+- **Authentication**: Firebase Authentication (email/password)
 - **Database**: Firestore for menu items and related data
 - Organized controller, service, and route structure
 - Middleware for authentication token verification
