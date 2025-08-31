@@ -1,31 +1,41 @@
 # Restaurant Menu App - Server 🍽️
 
 Backend API for the Restaurant Menu application.  
-Handles menu data management, routes, and service logic.
+Handles menu data management, authentication, and service logic.
 
 ---
 
 ## 📖 Overview
 This is the backend service for the Restaurant Menu App.  
-It exposes RESTful APIs for fetching and managing restaurant menu data, and is designed to work seamlessly with the [Restaurant Menu Client](https://github.com/siddhesh494/restaurant_menu_client).
+It uses **Firebase Authentication** for secure user sign-up/login and **Cloud Firestore** for storing and managing menu data.  
+The server works seamlessly with the [Restaurant Menu Client](https://github.com/siddhesh494/restaurant_menu_client).
 
 ---
 
 ## ✨ Features
-- REST API for menu management
+- **Authentication**: Firebase Authentication (email/password or other supported providers)
+- **Database**: Firestore for menu items and related data
 - Organized controller, service, and route structure
-- Middleware for request handling
-- Mock data or database-ready design
-- Scalable architecture with DAO pattern
+- Middleware for authentication token verification
+- Scalable architecture with clean separation of logic
 
 ---
 
 ## 🛠 Tech Stack
 - **Node.js** with **Express.js**
+- **Firebase Admin SDK** (Authentication + Firestore)
 - JavaScript (server-side)
 - MVC-inspired modular folder structure
 
 ---
+
+### Create a `.env` file in the root directory and add:
+```bash
+FIREBASE_PROJECT_ID=your_project_id
+FIREBASE_CLIENT_EMAIL=your_client_email
+FIREBASE_PRIVATE_KEY="your_private_key"
+PORT=5000
+```
 
 ## 📦 Installation & Setup
 
@@ -37,5 +47,9 @@ cd restaurant_menu_server
 # Install dependencies
 npm install
 
-# Start the server
+# To start the project
 npm start
+```
+
+
+
